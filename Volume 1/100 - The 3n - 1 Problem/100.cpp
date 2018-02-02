@@ -1,6 +1,8 @@
 #include <map>
+#include <vector>
 #include <iostream>
 #include <string>
+#include <fstream>
 #include <sstream>
 
 using namespace std;
@@ -18,7 +20,9 @@ int collatz(int n){
 
 int main(){
     string line;
-    while(getline(cin, line)){
+	ifstream inFile;
+	inFile.open('input.txt');
+    while(getline(inFile, line)){
         try {
             vector<int> res;
             istringstream iss(line);
